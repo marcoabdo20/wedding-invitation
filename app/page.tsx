@@ -897,25 +897,78 @@ function InvitationContent() {
         transition={{ delay: 0.6, duration: 1 }}
       >
         {/* Top floral decoration */}
+<motion.div
+  className="flex justify-center mb-6"
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+>
+  <div className="relative w-32 h-32 md:w-40 md:h-40">
+    {/* Outer rotating ring */}
+    <motion.div
+      className="absolute inset-0 rounded-full border-2 border-dashed border-pink-300/40"
+      animate={{ rotate: 360 }}
+      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+    />
+    
+    {/* Inner rotating ring (opposite direction) */}
+    <motion.div
+      className="absolute inset-2 rounded-full border border-pink-400/20"
+      animate={{ rotate: -360 }}
+      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+    />
+    
+    {/* Photo container */}
+    <motion.div
+      className="absolute inset-3 rounded-full overflow-hidden border-[3px] border-white shadow-xl shadow-pink-300/40"
+      whileHover={{ scale: 1.05 }}
+      transition={{ type: "spring", stiffness: 300 }}
+    >
+      <img
+        src="/images/3.jpeg"
+        alt=""
+        className="w-full h-full object-cover"
+        onError={(e) => {
+          (e.target as HTMLImageElement).style.display = "none";
+          const parent = (e.target as HTMLImageElement).parentElement;
+          if (parent) {
+            parent.innerHTML = `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="45" fill="url(#fallbackGrad)" opacity="0.3"/><defs><linearGradient id="fallbackGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F9A8D4"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs></svg>`;
+          }
+        }}
+      />
+    </motion.div>
+    
+    {/* Decorative corner hearts */}
+    {[0, 1, 2, 3].map((i) => {
+      const positions = [
+        { top: "0", left: "50%", transform: "translate(-50%, -30%)" },
+        { top: "50%", right: "0", transform: "translate(30%, -50%)" },
+        { bottom: "0", left: "50%", transform: "translate(-50%, 30%)" },
+        { top: "50%", left: "0", transform: "translate(-30%, -50%)" },
+      ];
+      return (
         <motion.div
-          className="flex justify-center mb-6"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          key={i}
+          className="absolute"
+          style={positions[i]}
+          animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
+          transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
         >
-          <svg viewBox="0 0 120 120" className="w-32 h-32 opacity-80" style={{ filter: "drop-shadow(0 4px 8px rgba(236,72,153,0.3))" }}>
-            <defs>
-              <linearGradient id="topFloral" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#F9A8D4" />
-                <stop offset="100%" stopColor="#EC4899" />
-              </linearGradient>
-            </defs>
-            <circle cx="60" cy="60" r="50" fill="url(#topFloral)" opacity="0.2" />
-            <circle cx="60" cy="60" r="35" fill="none" stroke="#EC4899" strokeWidth="2" opacity="0.3" />
-            <path d="M60,10 Q80,40 110,60 Q80,80 60,110 Q40,80 10,60 Q40,40 60,10Z" fill="#F9A8D4" opacity="0.4" />
-            <circle cx="60" cy="60" r="15" fill="#EC4899" opacity="0.5" />
-          </svg>
+          <Heart className="w-3 h-3 text-pink-400 fill-pink-400" />
         </motion.div>
+      );
+    })}
+    
+    {/* Center sparkle */}
+    <motion.div
+      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      animate={{ rotate: [0, 180, 360], scale: [1, 1.2, 1] }}
+      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+    >
+      <Sparkles className="w-5 h-5 text-pink-300/60" />
+    </motion.div>
+  </div>
+</motion.div>
 
         {/* Bible Verse Header */}
         <motion.div
