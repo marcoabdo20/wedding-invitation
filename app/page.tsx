@@ -39,7 +39,8 @@ const CHURCH_LOCATION = {
   address: "ساحل طما، أسيوط",
   lat: 26.8206,
   lng: 31.4195,
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=كنيسة+مارمرقس+ساحل+طما+أسيوط",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=كنيسة+مارمرقس+ساحل+طما+أسيوط",
   phone: "",
 };
 
@@ -49,7 +50,8 @@ const RECEPTION_LOCATION = {
   address: "طما، أسيوط",
   lat: 26.8206,
   lng: 31.4195,
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=قاعة+وادي+النخيل+طما+أسيوط",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=قاعة+وادي+النخيل+طما+أسيوط",
   phone: "",
 };
 
@@ -61,7 +63,10 @@ function AnimatedBackground() {
 
       <motion.div
         className="absolute -top-32 -right-32 w-[420px] h-[420px] rounded-full blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(244,114,182,0.35), transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(244,114,182,0.35), transparent 70%)",
+        }}
         animate={{
           x: [0, 40, -20, 0],
           y: [0, 30, -10, 0],
@@ -72,24 +77,40 @@ function AnimatedBackground() {
 
       <motion.div
         className="absolute top-1/3 -left-40 w-[380px] h-[380px] rounded-full blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(251,207,232,0.45), transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(251,207,232,0.45), transparent 70%)",
+        }}
         animate={{
           x: [0, -30, 20, 0],
           y: [0, -25, 15, 0],
           scale: [1, 1.1, 0.9, 1],
         }}
-        transition={{ duration: 26, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+        transition={{
+          duration: 26,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 2,
+        }}
       />
 
       <motion.div
         className="absolute bottom-0 left-1/3 w-[460px] h-[460px] rounded-full blur-3xl"
-        style={{ background: "radial-gradient(circle, rgba(190,24,93,0.18), transparent 70%)" }}
+        style={{
+          background:
+            "radial-gradient(circle, rgba(190,24,93,0.18), transparent 70%)",
+        }}
         animate={{
           x: [0, 25, -35, 0],
           y: [0, -20, 20, 0],
           scale: [1, 1.2, 1, 1],
         }}
-        transition={{ duration: 30, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 4,
+        }}
       />
 
       <motion.div
@@ -107,7 +128,11 @@ function AnimatedBackground() {
 }
 
 // ─── Floral Corner Decorations ───────────────────────────
-function FloralCorner({ position }: { position: "top-left" | "top-right" | "bottom-left" | "bottom-right" }) {
+function FloralCorner({
+  position,
+}: {
+  position: "top-left" | "top-right" | "bottom-left" | "bottom-right";
+}) {
   const rotations = {
     "top-left": "rotate(0deg)",
     "top-right": "rotate(90deg)",
@@ -131,7 +156,13 @@ function FloralCorner({ position }: { position: "top-left" | "top-right" | "bott
     >
       <svg viewBox="0 0 180 180" className="w-full h-full opacity-40">
         <defs>
-          <linearGradient id={`cornerGrad-${position}`} x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id={`cornerGrad-${position}`}
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#F9A8D4" />
             <stop offset="100%" stopColor="#EC4899" />
           </linearGradient>
@@ -222,8 +253,8 @@ function WelcomeMessage() {
         className="text-pink-800/90 text-base md:text-lg font-serif leading-loose"
         style={{ fontFamily: "'Amiri', 'Noto Naskh Arabic', serif" }}
       >
-        بقلوبٍ يملؤها الشكر، وخُطى تُبارَك من فوق، ندعوكم لنكون جزءًا من
-        أجمل فصول حكايتنا
+        بقلوبٍ يملؤها الشكر، وخُطى تُبارَك من فوق، ندعوكم لنكون جزءًا من أجمل
+        فصول حكايتنا
       </motion.p>
       <motion.div
         className="flex items-center justify-center gap-2 mt-3"
@@ -281,8 +312,24 @@ function StarButton({ onClick }: { onClick: () => void }) {
           animate={{ pathLength: 1 }}
           transition={{ duration: 2, ease: "easeInOut" }}
         />
-        <circle cx="100" cy="100" r="35" fill="none" stroke="#FCE7F3" strokeWidth="1.5" opacity="0.6" />
-        <circle cx="100" cy="100" r="25" fill="none" stroke="#FCE7F3" strokeWidth="1" opacity="0.4" />
+        <circle
+          cx="100"
+          cy="100"
+          r="35"
+          fill="none"
+          stroke="#FCE7F3"
+          strokeWidth="1.5"
+          opacity="0.6"
+        />
+        <circle
+          cx="100"
+          cy="100"
+          r="25"
+          fill="none"
+          stroke="#FCE7F3"
+          strokeWidth="1"
+          opacity="0.4"
+        />
       </svg>
 
       <div className="absolute inset-0 flex items-center justify-center">
@@ -297,7 +344,8 @@ function StarButton({ onClick }: { onClick: () => void }) {
             alt="ريمون و مادلين"
             className="w-full h-full object-cover"
             onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop";
+              (e.target as HTMLImageElement).src =
+                "https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=400&fit=crop";
             }}
           />
         </motion.div>
@@ -320,17 +368,24 @@ function FloatingParticles() {
   const [particles, setParticles] = useState<FloatingParticle[]>([]);
 
   useEffect(() => {
-    const types: ("petal" | "sparkle" | "heart")[] = ["petal", "sparkle", "heart"];
-    const newParticles: FloatingParticle[] = Array.from({ length: 50 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 25 + 8,
-      duration: Math.random() * 20 + 12,
-      delay: Math.random() * 15,
-      type: types[Math.floor(Math.random() * types.length)],
-      opacity: Math.random() * 0.6 + 0.2,
-    }));
+    const types: ("petal" | "sparkle" | "heart")[] = [
+      "petal",
+      "sparkle",
+      "heart",
+    ];
+    const newParticles: FloatingParticle[] = Array.from(
+      { length: 50 },
+      (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 25 + 8,
+        duration: Math.random() * 20 + 12,
+        delay: Math.random() * 15,
+        type: types[Math.floor(Math.random() * types.length)],
+        opacity: Math.random() * 0.6 + 0.2,
+      }),
+    );
     setParticles(newParticles);
   }, []);
 
@@ -372,7 +427,10 @@ function FloatingParticles() {
             <Star className="w-full h-full text-pink-300" fill="currentColor" />
           )}
           {p.type === "heart" && (
-            <Heart className="w-full h-full text-rose-400" fill="currentColor" />
+            <Heart
+              className="w-full h-full text-rose-400"
+              fill="currentColor"
+            />
           )}
         </motion.div>
       ))}
@@ -423,11 +481,20 @@ function TransitionOverlay() {
             transition={{ duration: 1.8, delay: 0.03 * i, ease: "easeOut" }}
           >
             {i % 3 === 0 ? (
-              <Heart className="text-rose-400 fill-rose-400" style={{ width: size, height: size }} />
+              <Heart
+                className="text-rose-400 fill-rose-400"
+                style={{ width: size, height: size }}
+              />
             ) : i % 3 === 1 ? (
-              <Star className="text-pink-300 fill-pink-300" style={{ width: size, height: size }} />
+              <Star
+                className="text-pink-300 fill-pink-300"
+                style={{ width: size, height: size }}
+              />
             ) : (
-              <Sparkles className="text-yellow-300 fill-yellow-300" style={{ width: size, height: size }} />
+              <Sparkles
+                className="text-yellow-300 fill-yellow-300"
+                style={{ width: size, height: size }}
+              />
             )}
           </motion.div>
         );
@@ -483,11 +550,25 @@ function LocationCard({
         <div className="absolute inset-0 opacity-20">
           <svg width="100%" height="100%">
             <defs>
-              <pattern id={`mapGrid-${location.name}`} width="30" height="30" patternUnits="userSpaceOnUse">
-                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#EC4899" strokeWidth="0.5" />
+              <pattern
+                id={`mapGrid-${location.name}`}
+                width="30"
+                height="30"
+                patternUnits="userSpaceOnUse"
+              >
+                <path
+                  d="M 30 0 L 0 0 0 30"
+                  fill="none"
+                  stroke="#EC4899"
+                  strokeWidth="0.5"
+                />
               </pattern>
             </defs>
-            <rect width="100%" height="100%" fill={`url(#mapGrid-${location.name})`} />
+            <rect
+              width="100%"
+              height="100%"
+              fill={`url(#mapGrid-${location.name})`}
+            />
           </svg>
         </div>
 
@@ -521,7 +602,10 @@ function LocationCard({
               animate={{ scale: [1, 1.3, 1], opacity: [0.5, 0.2, 0.5] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <MapPin className="w-12 h-12 text-rose-500 relative z-10 drop-shadow-lg" strokeWidth={2} />
+            <MapPin
+              className="w-12 h-12 text-rose-500 relative z-10 drop-shadow-lg"
+              strokeWidth={2}
+            />
             <motion.div
               className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-6 h-1.5 bg-rose-500/20 rounded-full blur-sm"
               animate={{ scaleX: [1, 1.8, 1], opacity: [0.5, 0.15, 0.5] }}
@@ -532,7 +616,9 @@ function LocationCard({
 
         {/* Location Name Overlay */}
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white/95 via-white/70 to-transparent pt-10 pb-4 px-5">
-          <h4 className="text-pink-900 font-bold text-lg text-right">{location.name}</h4>
+          <h4 className="text-pink-900 font-bold text-lg text-right">
+            {location.name}
+          </h4>
         </div>
       </div>
 
@@ -628,11 +714,15 @@ function EventCard({
       </div>
 
       <div className="flex items-start gap-4 relative z-10">
-        <div className={`p-3 rounded-2xl ${isReception ? "bg-pink-500/20" : "bg-pink-100/50"}`}>
+        <div
+          className={`p-3 rounded-2xl ${isReception ? "bg-pink-500/20" : "bg-pink-100/50"}`}
+        >
           <Icon className="w-6 h-6 text-pink-600" />
         </div>
         <div className="flex-1 text-right">
-          <h3 className="text-xl md:text-2xl font-bold text-pink-900 mb-2">{title}</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-pink-900 mb-2">
+            {title}
+          </h3>
           <div className="flex items-center gap-2 text-pink-700/80 mb-1">
             <Clock className="w-4 h-4" />
             <span className="text-lg font-medium">{time}</span>
@@ -641,7 +731,9 @@ function EventCard({
             <MapPin className="w-4 h-4" />
             <span>{location}</span>
           </div>
-          <p className="text-pink-800/60 text-sm mt-2 leading-relaxed">{address}</p>
+          <p className="text-pink-800/60 text-sm mt-2 leading-relaxed">
+            {address}
+          </p>
         </div>
       </div>
 
@@ -651,7 +743,13 @@ function EventCard({
 }
 
 // ─── Music Player ──────────────────────────────────────
-function MusicPlayer({ isPlaying, onToggle }: { isPlaying: boolean; onToggle: () => void }) {
+function MusicPlayer({
+  isPlaying,
+  onToggle,
+}: {
+  isPlaying: boolean;
+  onToggle: () => void;
+}) {
   return (
     <motion.button
       onClick={onToggle}
@@ -676,7 +774,12 @@ function MusicPlayer({ isPlaying, onToggle }: { isPlaying: boolean; onToggle: ()
             <div className="w-1 h-3 bg-pink-400 rounded-full animate-pulse delay-150" />
           </motion.div>
         ) : (
-          <motion.div key="muted" initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
+          <motion.div
+            key="muted"
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0 }}
+          >
             <VolumeX className="w-5 h-5 text-pink-400" />
           </motion.div>
         )}
@@ -718,22 +821,37 @@ function ParentsSection() {
             initial={{ opacity: 0, x: i === 0 ? -40 : 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 + i * 0.15, duration: 0.7, type: "spring" }}
+            transition={{
+              delay: 0.2 + i * 0.15,
+              duration: 0.7,
+              type: "spring",
+            }}
           >
             <motion.div
               className="relative rounded-2xl px-6 py-5 bg-white/50 backdrop-blur-sm border border-pink-200/40 shadow-lg overflow-hidden group"
-              whileHover={{ scale: 1.04, y: -3, boxShadow: "0 15px 35px rgba(236,72,153,0.25)" }}
+              whileHover={{
+                scale: 1.04,
+                y: -3,
+                boxShadow: "0 15px 35px rgba(236,72,153,0.25)",
+              }}
               transition={{ type: "spring", stiffness: 250 }}
             >
               <motion.div
                 className="absolute -inset-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                style={{ background: "radial-gradient(circle, rgba(249,168,212,0.4), transparent 70%)" }}
+                style={{
+                  background:
+                    "radial-gradient(circle, rgba(249,168,212,0.4), transparent 70%)",
+                }}
               />
               <div className="flex justify-center mb-2">
                 <Crown className="w-5 h-5 text-pink-400/70" />
               </div>
-              <p className="text-xs text-pink-500/70 mb-1 tracking-wide">{p.side}</p>
-              <p className="text-pink-900 text-xl md:text-2xl font-bold">{p.name}</p>
+              <p className="text-xs text-pink-500/70 mb-1 tracking-wide">
+                {p.side}
+              </p>
+              <p className="text-pink-900 text-xl md:text-2xl font-bold">
+                {p.name}
+              </p>
               <div className="mt-2 h-px w-10 mx-auto bg-gradient-to-r from-transparent via-pink-400/50 to-transparent" />
             </motion.div>
           </motion.div>
@@ -757,7 +875,12 @@ function ParentsSection() {
 
 // ─── Countdown Timer ─────────────────────────────────────
 function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -766,7 +889,9 @@ function CountdownTimer() {
       if (distance > 0) {
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          hours: Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+          ),
           minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
           seconds: Math.floor((distance % (1000 * 60)) / 1000),
         });
@@ -792,15 +917,20 @@ function CountdownTimer() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 * i }}
         >
-          <div 
+          <div
             className="w-14 h-14 md:w-[4.5rem] md:h-[4.5rem] rounded-2xl bg-white/20 backdrop-blur-sm border border-pink-200/40 flex items-center justify-center shadow-lg"
-            style={{ background: "linear-gradient(135deg, rgba(236,72,153,0.15), rgba(251,207,232,0.1))" }}
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(236,72,153,0.15), rgba(251,207,232,0.1))",
+            }}
           >
             <span className="text-xl md:text-2xl font-bold text-pink-900 font-mono">
               {String(unit.value).padStart(2, "0")}
             </span>
           </div>
-          <span className="text-xs md:text-sm text-pink-700/80 mt-2 font-medium">{unit.label}</span>
+          <span className="text-xs md:text-sm text-pink-700/80 mt-2 font-medium">
+            {unit.label}
+          </span>
         </motion.div>
       ))}
     </div>
@@ -829,8 +959,12 @@ function LocationsSection() {
           <MapPin className="w-6 h-6 text-pink-500" />
           <div className="h-px w-12 bg-gradient-to-l from-transparent to-pink-400/50" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-pink-900 mb-2">موقع المناسبة</h2>
-        <p className="text-pink-700/60 text-sm">اضغط على الزر للوصول إلى الموقع عبر خرائط Google</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-pink-900 mb-2">
+          موقع المناسبة
+        </h2>
+        <p className="text-pink-700/60 text-sm">
+          اضغط على الزر للوصول إلى الموقع عبر خرائط Google
+        </p>
       </motion.div>
 
       {/* Location Cards */}
@@ -844,7 +978,9 @@ function LocationsSection() {
         >
           <div className="flex items-center gap-2 mb-3 px-1">
             <Church className="w-5 h-5 text-pink-600" />
-            <span className="text-pink-800 font-bold text-lg">موقع الكنيسة</span>
+            <span className="text-pink-800 font-bold text-lg">
+              موقع الكنيسة
+            </span>
           </div>
           <LocationCard location={CHURCH_LOCATION} delay={0} />
         </motion.div>
@@ -870,7 +1006,9 @@ function LocationsSection() {
         >
           <div className="flex items-center gap-2 mb-3 px-1">
             <Sparkles className="w-5 h-5 text-pink-600" />
-            <span className="text-pink-800 font-bold text-lg">موقع قاعة الاستقبال</span>
+            <span className="text-pink-800 font-bold text-lg">
+              موقع قاعة الاستقبال
+            </span>
           </div>
           <LocationCard location={RECEPTION_LOCATION} delay={0.1} />
         </motion.div>
@@ -897,78 +1035,78 @@ function InvitationContent() {
         transition={{ delay: 0.6, duration: 1 }}
       >
         {/* Top floral decoration */}
-<motion.div
-  className="flex justify-center mb-6"
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 1 }}
->
-  <div className="relative w-32 h-32 md:w-40 md:h-40">
-    {/* Outer rotating ring */}
-    <motion.div
-      className="absolute inset-0 rounded-full border-2 border-dashed border-pink-300/40"
-      animate={{ rotate: 360 }}
-      transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-    />
-    
-    {/* Inner rotating ring (opposite direction) */}
-    <motion.div
-      className="absolute inset-2 rounded-full border border-pink-400/20"
-      animate={{ rotate: -360 }}
-      transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-    />
-    
-    {/* Photo container */}
-    <motion.div
-      className="absolute inset-3 rounded-full overflow-hidden border-[3px] border-white shadow-xl shadow-pink-300/40"
-      whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300 }}
-    >
-      <img
-        src="/images/3.jpeg"
-        alt=""
-        className="w-full h-full object-cover"
-        onError={(e) => {
-          (e.target as HTMLImageElement).style.display = "none";
-          const parent = (e.target as HTMLImageElement).parentElement;
-          if (parent) {
-            parent.innerHTML = `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="45" fill="url(#fallbackGrad)" opacity="0.3"/><defs><linearGradient id="fallbackGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F9A8D4"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs></svg>`;
-          }
-        }}
-      />
-    </motion.div>
-    
-    {/* Decorative corner hearts */}
-    {[0, 1, 2, 3].map((i) => {
-      const positions = [
-        { top: "0", left: "50%", transform: "translate(-50%, -30%)" },
-        { top: "50%", right: "0", transform: "translate(30%, -50%)" },
-        { bottom: "0", left: "50%", transform: "translate(-50%, 30%)" },
-        { top: "50%", left: "0", transform: "translate(-30%, -50%)" },
-      ];
-      return (
         <motion.div
-          key={i}
-          className="absolute"
-          style={positions[i]}
-          animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
-          transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+          className="flex justify-center mb-6"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
         >
-          <Heart className="w-3 h-3 text-pink-400 fill-pink-400" />
+          <div className="relative w-32 h-32 md:w-40 md:h-40">
+            {/* Outer rotating ring */}
+            <motion.div
+              className="absolute inset-0 rounded-full border-2 border-dashed border-pink-300/40"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            />
+
+            {/* Inner rotating ring (opposite direction) */}
+            <motion.div
+              className="absolute inset-2 rounded-full border border-pink-400/20"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            />
+
+            {/* Photo container */}
+            <motion.div
+              className="absolute inset-3 rounded-full overflow-hidden border-[3px] border-white shadow-xl shadow-pink-300/40"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <img
+                src="/images/3.jpeg"
+                alt=""
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).style.display = "none";
+                  const parent = (e.target as HTMLImageElement).parentElement;
+                  if (parent) {
+                    parent.innerHTML = `<svg viewBox="0 0 100 100" class="w-full h-full"><circle cx="50" cy="50" r="45" fill="url(#fallbackGrad)" opacity="0.3"/><defs><linearGradient id="fallbackGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#F9A8D4"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs></svg>`;
+                  }
+                }}
+              />
+            </motion.div>
+
+            {/* Decorative corner hearts */}
+            {[0, 1, 2, 3].map((i) => {
+              const positions = [
+                { top: "0", left: "50%", transform: "translate(-50%, -30%)" },
+                { top: "50%", right: "0", transform: "translate(30%, -50%)" },
+                { bottom: "0", left: "50%", transform: "translate(-50%, 30%)" },
+                { top: "50%", left: "0", transform: "translate(-30%, -50%)" },
+              ];
+              return (
+                <motion.div
+                  key={i}
+                  className="absolute"
+                  style={positions[i]}
+                  animate={{ scale: [1, 1.2, 1], opacity: [0.6, 1, 0.6] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: i * 0.5 }}
+                >
+                  <Heart className="w-3 h-3 text-pink-400 fill-pink-400" />
+                </motion.div>
+              );
+            })}
+
+            {/* Center sparkle */}
+            <motion.div
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+              animate={{ rotate: [0, 180, 360], scale: [1, 1.2, 1] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+            >
+              <Sparkles className="w-5 h-5 text-pink-300/60" />
+            </motion.div>
+          </div>
         </motion.div>
-      );
-    })}
-    
-    {/* Center sparkle */}
-    <motion.div
-      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      animate={{ rotate: [0, 180, 360], scale: [1, 1.2, 1] }}
-      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-    >
-      <Sparkles className="w-5 h-5 text-pink-300/60" />
-    </motion.div>
-  </div>
-</motion.div>
 
         {/* Bible Verse Header */}
         <motion.div
@@ -989,7 +1127,9 @@ function InvitationContent() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1.5 }}
           >
-            &ldquo;الآنَ قَدِ اخْتَرْتُ وَقَدَّسْتُ هذَا الْبَيْتَ لِيَكُونَ اسْمِي فِيهِ إِلَى الأَبَدِ، وَتَكُونُ عَيْنَايَ وَقَلْبِي هُنَاكَ كُلَّ الأَيَّامِ&rdquo;
+            &ldquo;الآنَ قَدِ اخْتَرْتُ وَقَدَّسْتُ هذَا الْبَيْتَ لِيَكُونَ
+            اسْمِي فِيهِ إِلَى الأَبَدِ، وَتَكُونُ عَيْنَايَ وَقَلْبِي هُنَاكَ
+            كُلَّ الأَيَّامِ&rdquo;
           </motion.p>
         </motion.div>
 
@@ -1005,7 +1145,8 @@ function InvitationContent() {
               className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent"
               style={{
                 fontFamily: "'Great Vibes', cursive",
-                backgroundImage: "linear-gradient(135deg, #BE185D, #EC4899, #F472B6)",
+                backgroundImage:
+                  "linear-gradient(135deg, #BE185D, #EC4899, #F472B6)",
                 filter: "drop-shadow(0 2px 6px rgba(190,24,93,0.25))",
               }}
               initial={{ x: -50, opacity: 0 }}
@@ -1026,7 +1167,8 @@ function InvitationContent() {
               className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent"
               style={{
                 fontFamily: "'Great Vibes', cursive",
-                backgroundImage: "linear-gradient(135deg, #BE185D, #EC4899, #F472B6)",
+                backgroundImage:
+                  "linear-gradient(135deg, #BE185D, #EC4899, #F472B6)",
                 filter: "drop-shadow(0 2px 6px rgba(190,24,93,0.25))",
               }}
               initial={{ x: 50, opacity: 0 }}
@@ -1039,7 +1181,10 @@ function InvitationContent() {
 
           <motion.div
             className="h-px w-40 mx-auto mb-4"
-            style={{ background: "linear-gradient(90deg, transparent, #EC4899, transparent)" }}
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, #EC4899, transparent)",
+            }}
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ delay: 1, duration: 1 }}
@@ -1066,7 +1211,9 @@ function InvitationContent() {
           transition={{ duration: 1.5 }}
         >
           <p className="text-pink-700/70 text-sm md:text-base leading-loose font-serif">
-            &ldquo;اِمْرَأَتُكَ مِثْلُ كَرْمَةٍ مُثْمِرَةٍ فِي جَوَانِبِ بَيْتِكَ. بَنُوكَ مِثْلُ غُرُوسِ الزَّيْتُونِ حَوْلَ مَائِدَتِكَ.&rdquo;
+            &ldquo;اِمْرَأَتُكَ مِثْلُ كَرْمَةٍ مُثْمِرَةٍ فِي جَوَانِبِ
+            بَيْتِكَ. بَنُوكَ مِثْلُ غُرُوسِ الزَّيْتُونِ حَوْلَ
+            مَائِدَتِكَ.&rdquo;
           </p>
         </motion.div>
 
@@ -1167,7 +1314,7 @@ export default function WeddingInvitation() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio("/music/widding.mp3");
+    audioRef.current = new Audio("/music/widding.mp4");
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
 
@@ -1211,18 +1358,48 @@ export default function WeddingInvitation() {
             key="cover"
             className="fixed inset-0 z-50 flex flex-col items-center justify-center"
             style={{
-              background: "linear-gradient(180deg, #fdf2f8 0%, #fce7f3 30%, #fbcfe8 60%, #f9a8d4 100%)",
+              background:
+                "linear-gradient(180deg, #fdf2f8 0%, #fce7f3 30%, #fbcfe8 60%, #f9a8d4 100%)",
             }}
             exit={{ opacity: 0, scale: 1.15, filter: "blur(6px)" }}
             transition={{ duration: 1, ease: "easeInOut" }}
           >
             <div className="absolute inset-0 opacity-10">
-              <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="100%"
+                height="100%"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <defs>
-                  <pattern id="floralPattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
-                    <circle cx="30" cy="30" r="20" fill="#EC4899" opacity="0.1" />
-                    <circle cx="10" cy="10" r="5" fill="#F9A8D4" opacity="0.15" />
-                    <circle cx="50" cy="50" r="5" fill="#F9A8D4" opacity="0.15" />
+                  <pattern
+                    id="floralPattern"
+                    x="0"
+                    y="0"
+                    width="60"
+                    height="60"
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <circle
+                      cx="30"
+                      cy="30"
+                      r="20"
+                      fill="#EC4899"
+                      opacity="0.1"
+                    />
+                    <circle
+                      cx="10"
+                      cy="10"
+                      r="5"
+                      fill="#F9A8D4"
+                      opacity="0.15"
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="5"
+                      fill="#F9A8D4"
+                      opacity="0.15"
+                    />
                   </pattern>
                 </defs>
                 <rect width="100%" height="100%" fill="url(#floralPattern)" />
@@ -1270,7 +1447,9 @@ export default function WeddingInvitation() {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>{isTransitioning && <TransitionOverlay />}</AnimatePresence>
+      <AnimatePresence>
+        {isTransitioning && <TransitionOverlay />}
+      </AnimatePresence>
     </main>
   );
 }
